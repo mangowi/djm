@@ -13,7 +13,9 @@ namespace DJM.Controllers
         {
 
             TrainingProductViewModel viewModel = new TrainingProductViewModel();
-            viewModel.Get();
+
+
+            viewModel.HandleRequest();
 
             return View(viewModel);
         }

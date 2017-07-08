@@ -15,8 +15,22 @@ namespace DJMData
         }
 
         public List<TrainingProduct> Products { get; set; }
+        public string EventCommand { get; set; }
 
-        public void Get()
+
+        public void HandleRequest()
+        {
+            switch (EventCommand.ToLower())
+            {
+                case "list":
+                    Get();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void Get()
         {
             TrainingProductManager manager = new TrainingProductManager();
 
