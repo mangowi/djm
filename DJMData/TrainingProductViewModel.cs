@@ -13,20 +13,31 @@ namespace DJMData
         public TrainingProductViewModel()
         {
             Products = new List<TrainingProduct>();
+            SearchEntity = new TrainingProduct();
             EventCommand = "List";
         }
 
         public List<TrainingProduct> Products { get; set; }
        
         public string EventCommand { get; set; }
+        public TrainingProduct SearchEntity { get; set; }
 
+        private void ResetSearch()
+        {
+            SearchEntity = new TrainingProduct();
+        }
 
         public void HandleRequest()
         {
             switch (EventCommand.ToLower())
             {
                 case "list":
+                case "search":
                     Get();
+                    break;
+
+                case "resetsearch":
+                    ResetSearch();
                     break;
 
 
@@ -39,7 +50,9 @@ namespace DJMData
         {
             TrainingProductManager manager = new TrainingProductManager();
 
-            Products = manager.Get();
+
+
+            Products = manager.Get(SearchEntity);
         }
     }
 }

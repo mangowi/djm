@@ -8,12 +8,17 @@ namespace DJMData
 {
    public  class TrainingProductManager
     {
-        public List<TrainingProduct> Get()
+        public List<TrainingProduct> Get(TrainingProduct entity)
         {
          List<TrainingProduct> ret = new List<TrainingProduct>();
 
 
             ret = CreateMockData();
+
+            if (!string.IsNullOrEmpty(entity.ProductName))
+            {
+                ret.FindAll(p => p.ProductName.ToLower().StartsWith(entity.ProductName, StringComparison.CurrentCulture));
+            }
             return ret;
         }
 

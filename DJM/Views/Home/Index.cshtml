@@ -7,9 +7,10 @@
 
 @using (Html.BeginForm())
 {
-    
+
     <!-- BEGIN HIDDEN FIELDS ARE-->
-   
+
+    @Html.HiddenFor((m => m.EventCommand))
     <!-- END HIDDEN FIELDS ARE-->
 
 
@@ -21,14 +22,23 @@
         </div>
         <div class="panel-body">
             <div class="form-group">
-                @Html.Label("Produt Name")
-                @Html.TextBox("SearchProductName", "", new { @class = "form-control" })
+                @Html.LabelFor(m => m.SearchEntity.ProductName, "Produt Name")
+                @Html.TextBoxFor(m => m.SearchEntity.ProductName,
+               new { @class = "form-control" })
             </div>
         </div>
 
         <div class="panel-footer">
-            <button id="btnSearch" class="btn btn-sm btn-primary">Search</button>
-            <button id="btnReset" class="btn btn-sm btn-primary">Reset</button>
+            <button id="btnSearch" class="btn btn-sm btn-primary"
+                    data-djm-action="search">
+                <i class="glyphicon glyphicon-search"></i> &nbsp;
+                Search
+
+            </button> <!--Value here has to match with case in view model-->
+            <button id="btnReset" class="btn btn-sm btn-primary"
+                    data-djm-action="resetsearch">
+                <i class="glyphicon glyphicon-share-alt"></i> &nbsp;Reset
+            </button>
         </div>
 
     </div>
@@ -67,6 +77,6 @@
 }
 @section scripts{
     <script>
-        
+
     </script>
 }
