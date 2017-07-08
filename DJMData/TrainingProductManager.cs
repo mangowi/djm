@@ -8,6 +8,15 @@ namespace DJMData
 {
    public  class TrainingProductManager
     {
+        public List<TrainingProduct> Get()
+        {
+         List<TrainingProduct> ret = new List<TrainingProduct>();
+
+
+            ret = CreateMockData();
+            return ret;
+        }
+
 
         private List<TrainingProduct> CreateMockData()
         {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DJMData;
 
 namespace DJM.Controllers
 {
@@ -10,7 +11,11 @@ namespace DJM.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+
+            TrainingProductManager manager = new TrainingProductManager();
+
+
+            return View(manager.Get());
         }
 
         public ActionResult About()

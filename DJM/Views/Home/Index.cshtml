@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<DJMData.TrainingProduct>
+@{
     ViewBag.Title = "Daniel's Training Company";
 }
 
@@ -35,6 +36,32 @@
 
 
     <!-- BEGIN LIST AREA -->
+     <!-- BEGIN GRID AREA -->
+    <div class="table-responsive">
+        <table class="table table-condensed table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Introduction Date</th>
+                    <th>Url</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td>@item.IntroductionDate</td>
+                        <td>@item.Url</td>
+                        <td>@item.Price.ToString("c")</td> <!-- Express as currency-->
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+   <!-- END GRID AREA -->
+
     <!-- END LIST AREA -->
 
 }
