@@ -8,27 +8,29 @@
 {
     
     <!-- BEGIN HIDDEN FIELDS ARE-->
+   
+    <!-- END HIDDEN FIELDS ARE-->
+
+
+    <!-- BEGIN SEARCH AREA -->
+
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h1 class="panel-title"></h1>
+            <h1 class="panel-title">Search For Products</h1>
         </div>
         <div class="panel-body">
             <div class="form-group">
                 @Html.Label("Produt Name")
-                @Html.TextBox("SearchProductName", "", new {@class="form-control"})
+                @Html.TextBox("SearchProductName", "", new { @class = "form-control" })
             </div>
         </div>
-        
+
         <div class="panel-footer">
             <button id="btnSearch" class="btn btn-sm btn-primary">Search</button>
             <button id="btnReset" class="btn btn-sm btn-primary">Reset</button>
         </div>
 
     </div>
-    <!-- END HIDDEN FIELDS ARE-->
-
-
-    <!-- BEGIN SEARCH AREA -->
     <!-- END SEARCH AREA -->
 
 
