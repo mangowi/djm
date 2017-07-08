@@ -21,6 +21,7 @@ namespace DJM.Controllers
         }
 
 
+
         [HttpPost]
         public ActionResult Index(TrainingProductViewModel viewModel)
         {

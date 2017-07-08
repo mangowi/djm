@@ -12,6 +12,10 @@ namespace DJMData
 
         public TrainingProductViewModel()
         {
+            IsListAreaVisible = true;
+            IsSearchAreaVisible = true;
+            IsListAreaVisible = false;
+
             Products = new List<TrainingProduct>();
             SearchEntity = new TrainingProduct();
             EventCommand = "List";
@@ -21,6 +25,9 @@ namespace DJMData
        
         public string EventCommand { get; set; }
         public TrainingProduct SearchEntity { get; set; }
+        public bool IsDetailAreaVisible { get; set; }
+        public bool IsListAreaVisible { get; set; }
+        public bool IsSearchAreaVisible { get; set; }
 
         private void ResetSearch()
         {
@@ -38,9 +45,13 @@ namespace DJMData
 
                 case "resetsearch":
                     ResetSearch();
-                    Get();
                     break;
 
+                case "add":
+                    IsListAreaVisible = false;
+                    IsSearchAreaVisible = false;
+                    IsListAreaVisible = true;
+                    break;
 
                 default:
                     break;

@@ -15,37 +15,75 @@
 
 
     <!-- BEGIN SEARCH AREA -->
+    if (Model.IsSearchAreaVisible)
+    {
+  
 
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h1 class="panel-title">Search For Products</h1>
-        </div>
-        <div class="panel-body">
-            <div class="form-group">
-                @Html.LabelFor(m => m.SearchEntity.ProductName, "Produt Name")
-                @Html.TextBoxFor(m => m.SearchEntity.ProductName,
-               new { @class = "form-control" })
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h1 class="panel-title">Search For Products</h1>
             </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.SearchEntity.ProductName, "Produt Name")
+                    @Html.TextBoxFor(m => m.SearchEntity.ProductName,
+                        new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="panel-footer">
+                <button id="btnSearch" class="btn btn-sm btn-primary"
+                        data-djm-action="search">
+                    <i class="glyphicon glyphicon-search"></i> Search&nbsp;
+                    
+
+                </button> <!--Value here has to match with case in view model-->
+                <button id="btnReset" class="btn btn-sm btn-primary"
+                        data-djm-action="resetsearch">
+                    <i class="glyphicon glyphicon-share-alt"></i> Reset &nbsp;
+                </button>
+            
+                <button id="btnReset" class="btn btn-sm btn-primary"
+                        data-djm-action="add">
+                    <i class="glyphicon glyphicon-share-alt"></i> Add &nbsp;
+                </button>
+            </div>
+
         </div>
 
-        <div class="panel-footer">
-            <button id="btnSearch" class="btn btn-sm btn-primary"
-                    data-djm-action="search">
-                <i class="glyphicon glyphicon-search"></i> &nbsp;
-                Search
 
-            </button> <!--Value here has to match with case in view model-->
-            <button id="btnReset" class="btn btn-sm btn-primary"
-                    data-djm-action="resetsearch">
-                <i class="glyphicon glyphicon-share-alt"></i> &nbsp;Reset
-            </button>
-        </div>
-
-    </div>
+    }
     <!-- END SEARCH AREA -->
 
 
-    <!-- BEGIN LIST AREA -->
+    <!-- BEGIN DETAIL AREA -->
+    if (Model.IsDetailAreaVisible)
+    {
+  
+        <div class="panel panel-primary">
+            
+            <div class="panel-heading">
+                <h1 class="panel-title">Product INformation</h1>
+            </div>
+            
+            <div class="panel-body">
+                <div class="form-group">
+                    Product Details Goes here
+                </div>
+            </div>
+
+        </div>
+
+    }
+        
+    <!-- END DETAIL AREA -->
+
+
+   <!-- BEGIN LIST AREA -->
+    if (Model.IsListAreaVisible)
+    {
+
+
      <!-- BEGIN GRID AREA -->
     <div class="table-responsive">
         <table class="table table-condensed table-bordered table-striped table-hover">
@@ -71,22 +109,23 @@
         </table>
     </div>
    <!-- END GRID AREA -->
-
+    }
     <!-- END LIST AREA -->
+
 
 }
 @section scripts{
     <script>
         $(document).ready(function ()
         {
-            $("data-djm-action").on("click", function (e) {
-                e.preventDefault(); // Prevent default action to happen
+            $("[data-djm-action]").on("click", function (e) {
+                e.preventDefault();
 
-                $("#EventCommand").value($(this).data("data-djm-action")); // Bind event command on hidden field, grab is data
+                $("#EventCommand").value($(this).data("djm-action"));
             
 
 
-                $("form").submit(); // Submit  back to the controller on the post
+                $("form").submit(); 
             });
         });
 
