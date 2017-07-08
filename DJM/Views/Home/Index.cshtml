@@ -79,10 +79,10 @@
     <script>
         $(document).ready(function ()
         {
-            $("[data-djm-action]").on("click", function (e) {
+            $("data-djm-action").on("click", function (e) {
                 e.preventDefault(); // Prevent default action to happen
 
-                $("#EventCommand").value($(this).data("djm-action")); // Bind event command on hidden field, grab is data
+                $("#EventCommand").value($(this).data("data-djm-action")); // Bind event command on hidden field, grab is data
             
 
 

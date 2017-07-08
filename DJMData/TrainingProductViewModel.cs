@@ -38,6 +38,7 @@ namespace DJMData
 
                 case "resetsearch":
                     ResetSearch();
+                    Get();
                     break;
 
 
