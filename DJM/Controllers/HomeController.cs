@@ -20,5 +20,14 @@ namespace DJM.Controllers
             return View(viewModel);
         }
 
+
+        [HttpPost]
+        public ActionResult Index(TrainingProductViewModel viewModel)
+        {
+            viewModel.HandleRequest();
+            ModelState.Clear();
+
+            return View(viewModel);
+        }
     }
 }

@@ -77,6 +77,18 @@
 }
 @section scripts{
     <script>
+        $(document).ready(function ()
+        {
+            $("[data-djm-action]").on("click", function (e) {
+                e.preventDefault(); // Prevent default action to happen
+
+                $("#EventCommand").value($(this).data("djm-action")); // Bind event command on hidden field, grab is data
+            
+
+
+                $("form").submit(); // Submit  back to the controller on the post
+            });
+        });
 
     </script>
 }
