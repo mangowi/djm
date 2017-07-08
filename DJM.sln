@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DJM", "DJM\DJM.csproj", "{F78DB9DD-123C-4908-B71F-70FA7E11C677}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DJMData", "DJMData\DJMData.csproj", "{0268D18C-D951-413E-B5D2-8D4F93E06F86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F78DB9DD-123C-4908-B71F-70FA7E11C677}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F78DB9DD-123C-4908-B71F-70FA7E11C677}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F78DB9DD-123C-4908-B71F-70FA7E11C677}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0268D18C-D951-413E-B5D2-8D4F93E06F86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0268D18C-D951-413E-B5D2-8D4F93E06F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0268D18C-D951-413E-B5D2-8D4F93E06F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0268D18C-D951-413E-B5D2-8D4F93E06F86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
