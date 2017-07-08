@@ -1,4 +1,4 @@
-﻿@model List<DJMData.TrainingProduct>
+﻿@model DJMData.TrainingProductViewModel
 @{
     ViewBag.Title = "Daniel's Training Company";
 }
@@ -48,7 +48,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
+                @foreach (var item in Model.Products)
                 {
                     <tr>
                         <td>@item.ProductName</td>

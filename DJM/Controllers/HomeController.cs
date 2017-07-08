@@ -12,10 +12,10 @@ namespace DJM.Controllers
         public ActionResult Index()
         {
 
-            TrainingProductManager manager = new TrainingProductManager();
+            TrainingProductViewModel viewModel = new TrainingProductViewModel();
+            viewModel.Get();
 
-
-            return View(manager.Get());
+            return View(viewModel);
         }
 
     }
